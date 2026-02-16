@@ -13,6 +13,8 @@ def run_server():
     server = HTTPServer(("0.0.0.0", port), Handler)
     server.serve_forever()
 
+threading.Thread(target=run_server, daemon=True).start()
+
 threading.Thread(target=run_server).start()
 import uvloop
 from pyrogram import Client, idle, __version__
@@ -40,4 +42,5 @@ async def main():
         print(f"{me.first_name} - @{me.username} - Stopped !!!")
 
 uvloop.run(main())
+
 
