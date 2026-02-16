@@ -15,7 +15,6 @@ def run_server():
 
 threading.Thread(target=run_server, daemon=True).start()
 
-threading.Thread(target=run_server).start()
 import uvloop
 from pyrogram import Client, idle, __version__
 from pyrogram.raw.all import layer
@@ -42,5 +41,6 @@ async def main():
         print(f"{me.first_name} - @{me.username} - Stopped !!!")
 
 uvloop.run(main())
+
 
 
